@@ -1,6 +1,6 @@
 {
   "name": "currency-denominations",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A comprehensive package providing information about banknotes and coins for all world currencies",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,8 +18,13 @@
     "test:ci": "jest --coverage --ci --reporters=default --reporters=jest-junit",
     "test:legacy": "npm run build && node dist/cjs/test.js",
     "prepare": "npm run build",
+<<<<<<< HEAD
     "prepublishOnly": "npm run test:coverage && npm run build",
     "clean": "rm -rf dist coverage"
+=======
+    "clean": "rm -rf dist coverage",
+    "prepublishOnly": "npm run build"
+>>>>>>> e9e2625 (add prepublishOnly script)
   },
   "keywords": [
     "currency",
