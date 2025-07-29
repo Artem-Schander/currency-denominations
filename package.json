@@ -18,7 +18,8 @@
     "test:ci": "jest --coverage --ci --reporters=default --reporters=jest-junit",
     "test:legacy": "npm run build && node dist/cjs/test.js",
     "prepare": "npm run build",
-    "clean": "rm -rf dist coverage"
+    "clean": "rm -rf dist coverage",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "currency",
