@@ -80,6 +80,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
+
+# Build output should not be in git, but will be included in npm package via "files" field in package.json
 dist
 
 # Gatsby files
@@ -137,3 +139,6 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Test files
+test-import.js
