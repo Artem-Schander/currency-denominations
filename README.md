@@ -1,5 +1,10 @@
 # currency-denominations
 
+[![npm version](https://badge.fury.io/js/currency-denominations.svg)](https://badge.fury.io/js/currency-denominations)
+[![CI/CD Pipeline](https://github.com/Artem-Schander/currency-denominations/actions/workflows/ci.yml/badge.svg)](https://github.com/Artem-Schander/currency-denominations/actions/workflows/ci.yml)
+[![NPM Publishing](https://github.com/Artem-Schander/currency-denominations/actions/workflows/publish.yml/badge.svg)](https://github.com/Artem-Schander/currency-denominations/actions/workflows/publish.yml)
+[![codecov](https://codecov.io/gh/Artem-Schander/currency-denominations/branch/main/graph/badge.svg)](https://codecov.io/gh/Artem-Schander/currency-denominations)
+
 A comprehensive package providing information about banknotes and coins for all world currencies.
 
 ## Installation
@@ -275,6 +280,56 @@ Contributions are welcome! Please feel free to submit issues or pull requests fo
 - Bug fixes
 - Documentation improvements
 - New utility functions
+
+### Development Setup
+
+1. Fork and clone the repository
+2. Install dependencies: `npm ci`
+3. Run tests: `npm test`
+4. Build the project: `npm run build`
+
+### Release Process
+
+This project uses automated publishing via GitHub Actions:
+
+#### For Maintainers
+
+1. **Create a Release**: 
+   - Push a version tag: `git tag v1.0.0 && git push origin v1.0.0`
+   - This triggers the Release workflow which creates a GitHub release
+
+2. **Publish to NPM**:
+   - Publishing a GitHub release automatically triggers the NPM Publishing workflow
+   - The package is published to npm with provenance for security
+
+#### Automated Workflows
+
+- **CI/CD Pipeline** (`ci.yml`): Runs on every push/PR
+  - Tests on Node.js 18.x, 20.x, 22.x
+  - Type checking with TypeScript
+  - 100% test coverage validation
+  - Build verification
+  - Security auditing
+
+- **Release Workflow** (`release.yml`): Triggered by version tags
+  - Builds and tests the package
+  - Generates release notes from commit history
+  - Creates GitHub release with build artifacts
+  - Includes checksums for security
+
+- **NPM Publishing** (`publish.yml`): Triggered by GitHub releases
+  - Full test suite validation
+  - TypeScript compilation
+  - Publishes to npm with provenance
+  - Secure publishing with automation tokens
+
+#### Security Features
+
+- ✅ **Provenance**: All npm packages include attestations
+- ✅ **Clean Builds**: Validates working directory before publishing
+- ✅ **Test Coverage**: 100% coverage requirement
+- ✅ **Type Safety**: Full TypeScript validation
+- ✅ **Security Audits**: Automated dependency vulnerability scanning
 
 ## License
 

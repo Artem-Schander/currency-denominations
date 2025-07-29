@@ -1,0 +1,87 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history for changelog generation
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Run tests
+      run: npm run test:coverage
+      
+    - name: Generate release notes
+      id: release_notes
+      run: |
+        # Extract version from tag
+        VERSION=${GITHUB_REF#refs/tags/v}
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        
+        # Generate changelog since last tag
+        PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+        if [ -n "$PREVIOUS_TAG" ]; then
+          echo "## Changes since $PREVIOUS_TAG" > release-notes.md
+          git log --pretty=format:"- %s (%h)" $PREVIOUS_TAG..HEAD >> release-notes.md
+        else
+          echo "## Initial Release" > release-notes.md
+          echo "First release of currency-denominations package" >> release-notes.md
+        fi
+        
+        # Add package info
+        echo "" >> release-notes.md
+        echo "## Package Information" >> release-notes.md
+        echo "- Version: $VERSION" >> release-notes.md
+        echo "- Node.js support: >=12.0.0" >> release-notes.md
+        echo "- TypeScript support: ✅" >> release-notes.md
+        echo "- ES Modules support: ✅" >> release-notes.md
+        echo "- CommonJS support: ✅" >> release-notes.md
+        
+    - name: Create build artifacts
+      run: |
+        # Create tarball
+        npm pack
+        mkdir -p artifacts
+        mv currency-denominations-*.tgz artifacts/
+        
+        # Copy built files
+        cp -r dist artifacts/
+        
+        # Create checksums
+        cd artifacts
+        sha256sum * > checksums.txt
+        
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Release v${{ steps.release_notes.outputs.version }}
+        body_path: release-notes.md
+        files: |
+          artifacts/currency-denominations-*.tgz
+          artifacts/checksums.txt
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
