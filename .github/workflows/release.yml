@@ -68,9 +68,9 @@ jobs:
         # Copy built files
         cp -r dist artifacts/
         
-        # Create checksums
+        # Create checksums for all files (not directories)
         cd artifacts
-        sha256sum * > checksums.txt
+        find . -type f -exec sha256sum {} \; > checksums.txt
         
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
