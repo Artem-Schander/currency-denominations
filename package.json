@@ -1,6 +1,6 @@
 {
   "name": "currency-denominations",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A comprehensive package providing information about banknotes and coins for all world currencies",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
