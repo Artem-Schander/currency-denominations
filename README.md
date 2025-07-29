@@ -10,7 +10,7 @@ npm install currency-denominations
 
 ## Features
 
-- 📊 **Comprehensive Data**: Includes denomination data for 105+ currencies
+- 📊 **Comprehensive Data**: Includes denomination data for 173+ currencies
 - 🔍 **Easy Lookup**: Simple API to get banknotes and coins for any currency
 - 📝 **TypeScript Support**: Full TypeScript definitions included
 - 🔄 **Multiple Formats**: Supports both ES modules and CommonJS
@@ -48,7 +48,7 @@ console.log(isSupported); // true
 
 // Get all supported currencies
 const currencies = getSupportedCurrencies();
-console.log(currencies.length); // 105+
+console.log(currencies.length); // 173
 ```
 
 ### CommonJS
@@ -119,8 +119,9 @@ Returns all supported currency codes.
 - `string[]` - Sorted array of currency codes
 
 ```javascript
+// Get all supported currencies
 const currencies = getSupportedCurrencies();
-// Returns: ['AFN', 'ALL', 'AMD', 'AOA', ...]
+// Returns: ['AED', 'AFN', 'ALL', 'AMD', ...]
 ```
 
 #### `hasDenominations(currencyCode: string)`
@@ -187,7 +188,7 @@ type CurrencyCode = string;
 
 ## Supported Currencies
 
-The package includes denomination data for 105+ currencies, including:
+The package includes denomination data for 173+ currencies, including:
 
 - **Major Currencies**: USD, EUR, GBP, JPY, CHF, CAD, AUD, etc.
 - **Developing Markets**: AFN, AMD, AOA, AWG, AZN, BDT, etc.
@@ -199,6 +200,14 @@ The package includes denomination data for 105+ currencies, including:
 ### Currency Examples
 
 ```javascript
+// US Dollar
+getDenominations('USD');
+// { notes: [1, 2, 5, 10, 20, 50, 100], coins: [0.01, 0.05, 0.1, 0.25] }
+
+// Euro
+getDenominations('EUR');
+// { notes: [5, 10, 20, 50, 100, 200, 500], coins: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] }
+
 // Afghanistan Afghani
 getDenominations('AFN');
 // { notes: [1, 2, 5, 10, 20, 50, 100, 500, 1000], coins: [1, 2, 5] }
@@ -236,9 +245,10 @@ MIT License - see LICENSE file for details.
 
 ## Changelog
 
-### 1.0.0
-- Initial release
-- Support for 105+ currencies
-- Complete TypeScript definitions
+### 0.0.1
+- Complete world currency coverage with 173+ currencies
+- Support for all major currencies (USD, EUR, GBP, JPY, CHF, CAD, AUD, etc.)
+- Comprehensive denomination data for banknotes and coins
+- Full TypeScript definitions
 - ES modules and CommonJS support
-- Comprehensive API with utility functions
+- Complete API with utility functions

@@ -24,6 +24,76 @@ export const currencyDenominations: CurrencyDenominations = {
   MRO: { notes: [], coins: [] }, // Replaced by MRU
   ZWL: { notes: [], coins: [] }, // No longer in active use
 
+  // Additional missing currencies from world currency list
+  AED: { notes: [5, 10, 20, 50, 100, 200, 500, 1000], coins: [0.01, 0.05, 0.1, 0.25, 0.5, 1] }, // UAE Dirham
+  ANG: { notes: [5, 10, 25, 50, 100, 200], coins: [0.01, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5] }, // Netherlands Antillean Guilder
+  ARS: { notes: [10, 20, 50, 100, 200, 500, 1000], coins: [1, 2, 5, 10] }, // Argentine Peso
+  AUD: { notes: [5, 10, 20, 50, 100], coins: [0.05, 0.1, 0.2, 0.5, 1, 2] }, // Australian Dollar
+  BGN: { notes: [5, 10, 20, 50, 100], coins: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] }, // Bulgarian Lev
+  BRL: { notes: [2, 5, 10, 20, 50, 100, 200], coins: [0.01, 0.05, 0.1, 0.25, 0.5, 1] }, // Brazilian Real
+  BTN: { notes: [1, 5, 10, 20, 50, 100, 500, 1000], coins: [0.25, 0.5, 1] }, // Ngultrum
+  CAD: { notes: [5, 10, 20, 50, 100], coins: [0.05, 0.1, 0.25, 1, 2] }, // Canadian Dollar
+  CHF: { notes: [10, 20, 50, 100, 200, 1000], coins: [0.05, 0.1, 0.2, 0.5, 1, 2, 5] }, // Swiss Franc
+  CLP: { notes: [1000, 2000, 5000, 10000, 20000], coins: [1, 5, 10, 50, 100, 500] }, // Chilean Peso
+  CNY: { notes: [1, 5, 10, 20, 50, 100], coins: [0.01, 0.05, 0.1, 0.5, 1] }, // Yuan Renminbi
+  COP: { notes: [2000, 5000, 10000, 20000, 50000, 100000], coins: [50, 100, 200, 500, 1000] }, // Colombian Peso
+  CZK: { notes: [100, 200, 500, 1000, 2000, 5000], coins: [1, 2, 5, 10, 20, 50] }, // Czech Koruna
+  DJF: { notes: [1000, 2000, 5000, 10000], coins: [1, 2, 5, 10, 20, 50, 100, 250, 500] }, // Djibouti Franc
+  DKK: { notes: [50, 100, 200, 500, 1000], coins: [0.5, 1, 2, 5, 10, 20] }, // Danish Krone
+  DOP: { notes: [50, 100, 200, 500, 1000, 2000], coins: [1, 5, 10, 25] }, // Dominican Peso
+  EGP: { notes: [5, 10, 20, 50, 100, 200], coins: [0.25, 0.5, 1] }, // Egyptian Pound
+  ERN: { notes: [1, 5, 10, 20, 50, 100], coins: [1, 5, 10, 25, 50] }, // Nakfa
+  EUR: { notes: [5, 10, 20, 50, 100, 200, 500], coins: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] }, // Euro
+  GBP: { notes: [5, 10, 20, 50], coins: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] }, // Pound Sterling
+  HKD: { notes: [10, 20, 50, 100, 500, 1000], coins: [0.1, 0.2, 0.5, 1, 2, 5, 10] }, // Hong Kong Dollar
+  HUF: { notes: [500, 1000, 2000, 5000, 10000, 20000], coins: [5, 10, 20, 50, 100, 200] }, // Forint
+  IDR: { notes: [1000, 2000, 5000, 10000, 20000, 50000, 100000], coins: [25, 50, 100, 200, 500, 1000] }, // Rupiah
+  ILS: { notes: [20, 50, 100, 200], coins: [0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10] }, // New Israeli Sheqel
+  INR: { notes: [5, 10, 20, 50, 100, 200, 500, 2000], coins: [1, 2, 5, 10] }, // Indian Rupee
+  ISK: { notes: [500, 1000, 2000, 5000, 10000], coins: [1, 5, 10, 50, 100] }, // Iceland Krona
+  JPY: { notes: [1000, 2000, 5000, 10000], coins: [1, 5, 10, 50, 100, 500] }, // Yen
+  KES: { notes: [50, 100, 200, 500, 1000], coins: [1, 5, 10, 20] }, // Kenyan Shilling
+  KPW: { notes: [], coins: [] }, // North Korean Won - limited information
+  KRW: { notes: [1000, 5000, 10000, 50000], coins: [1, 5, 10, 50, 100, 500] }, // Won
+  MAD: { notes: [20, 50, 100, 200], coins: [0.1, 0.2, 0.5, 1, 2, 5, 10] }, // Moroccan Dirham
+  MDL: { notes: [1, 5, 10, 20, 50, 100, 200, 500, 1000], coins: [1, 5, 10, 25, 50] }, // Moldovan Leu
+  MKD: { notes: [10, 50, 100, 200, 500, 1000, 2000, 5000], coins: [1, 2, 5, 10, 50] }, // Denar
+  MRU: { notes: [5, 10, 20, 50, 100, 200, 500, 1000], coins: [1] }, // Ouguiya (replaced MRO)
+  MUR: { notes: [25, 50, 100, 200, 500, 1000, 2000], coins: [1, 5, 20] }, // Mauritius Rupee
+  MXN: { notes: [20, 50, 100, 200, 500, 1000], coins: [0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10] }, // Mexican Peso
+  MYR: { notes: [1, 5, 10, 20, 50, 100], coins: [0.05, 0.1, 0.2, 0.5] }, // Malaysian Ringgit
+  MZN: { notes: [20, 50, 100, 200, 500, 1000], coins: [1, 2, 5, 10] }, // Mozambique Metical
+  NAD: { notes: [10, 20, 50, 100, 200], coins: [0.05, 0.1, 0.5, 1, 5, 10] }, // Namibia Dollar
+  NGN: { notes: [5, 10, 20, 50, 100, 200, 500, 1000], coins: [0.5, 1, 2] }, // Naira
+  NOK: { notes: [50, 100, 200, 500, 1000], coins: [1, 5, 10, 20] }, // Norwegian Krone
+  NPR: { notes: [1, 2, 5, 10, 20, 25, 50, 100, 500, 1000], coins: [1, 2, 5, 10] }, // Nepalese Rupee
+  NZD: { notes: [5, 10, 20, 50, 100], coins: [0.1, 0.2, 0.5, 1, 2] }, // New Zealand Dollar
+  PHP: { notes: [20, 50, 100, 200, 500, 1000], coins: [0.01, 0.05, 0.1, 0.25, 1, 5, 10] }, // Philippine Peso
+  PKR: { notes: [10, 20, 50, 100, 500, 1000, 5000], coins: [1, 2, 5] }, // Pakistan Rupee
+  PLN: { notes: [10, 20, 50, 100, 200, 500], coins: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5] }, // Zloty
+  QAR: { notes: [1, 5, 10, 50, 100, 500], coins: [1, 5, 10, 25, 50] }, // Qatari Rial
+  RON: { notes: [1, 5, 10, 50, 100, 200, 500], coins: [0.01, 0.05, 0.1, 0.5] }, // Romanian Leu
+  RSD: { notes: [10, 20, 50, 100, 200, 500, 1000, 2000, 5000], coins: [1, 2, 5, 10, 20] }, // Serbian Dinar
+  RUB: { notes: [50, 100, 200, 500, 1000, 2000, 5000], coins: [1, 2, 5, 10] }, // Russian Ruble
+  SAR: { notes: [1, 5, 10, 50, 100, 500], coins: [0.01, 0.05, 0.1, 0.25, 0.5, 1, 2] }, // Saudi Riyal
+  SEK: { notes: [20, 50, 100, 200, 500, 1000], coins: [1, 2, 5, 10] }, // Swedish Krona
+  SGD: { notes: [2, 5, 10, 50, 100, 1000, 10000], coins: [0.01, 0.05, 0.1, 0.2, 0.5, 1] }, // Singapore Dollar
+  STN: { notes: [5, 10, 20, 50, 100, 200], coins: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] }, // Dobra (replaced STD)
+  SVC: { notes: [1, 2, 5, 10, 25, 50, 100, 200], coins: [0.01, 0.03, 0.05, 0.1, 0.25] }, // El Salvador Colon
+  THB: { notes: [20, 50, 100, 500, 1000], coins: [0.25, 0.5, 1, 2, 5, 10] }, // Baht
+  TND: { notes: [5, 10, 20, 50], coins: [0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] }, // Tunisian Dinar
+  TRY: { notes: [5, 10, 20, 50, 100, 200], coins: [0.01, 0.05, 0.1, 0.25, 0.5, 1] }, // Turkish Lira
+  TWD: { notes: [100, 200, 500, 1000, 2000], coins: [0.5, 1, 5, 10, 20, 50] }, // New Taiwan Dollar
+  UAH: { notes: [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000], coins: [1, 2, 5, 10, 25, 50] }, // Hryvnia
+  USD: { notes: [1, 2, 5, 10, 20, 50, 100], coins: [0.01, 0.05, 0.1, 0.25] }, // US Dollar
+  UYU: { notes: [20, 50, 100, 200, 500, 1000, 2000], coins: [1, 2, 5, 10] }, // Peso Uruguayo
+  VES: { notes: [2, 5, 10, 20, 50, 100, 200, 500, 1000000], coins: [0.25, 0.5, 1] }, // Bolívar (replaced VEF)
+  VND: { notes: [100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000], coins: [200, 500, 1000, 2000, 5000] }, // Dong
+  XCD: { notes: [5, 10, 20, 50, 100], coins: [0.01, 0.02, 0.05, 0.1, 0.25, 1] }, // East Caribbean Dollar
+  XPT: { notes: [], coins: [] }, // Platinum
+  ZAR: { notes: [10, 20, 50, 100, 200], coins: [0.05, 0.1, 0.2, 0.5, 1, 2, 5] }, // Rand
+  ZMW: { notes: [2, 5, 10, 20, 50, 100], coins: [0.01, 0.05, 0.1, 0.5, 1] }, // Zambian Kwacha
+
   // Active currencies with denominations
   AFN: { notes: [1, 2, 5, 10, 20, 50, 100, 500, 1000], coins: [1, 2, 5] },
   DZD: { notes: [200, 500, 1000, 2000], coins: [1, 2, 5, 10, 20, 50, 100] },
