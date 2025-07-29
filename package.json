@@ -12,9 +12,13 @@
     "build": "npm run clean && npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "build:esm": "tsc --module esnext --outDir dist/esm",
-    "test": "node dist/cjs/test.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --coverage --ci --reporters=default --reporters=jest-junit",
+    "test:legacy": "npm run build && node dist/cjs/test.js",
     "prepare": "npm run build",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist coverage"
   },
   "keywords": [
     "currency",
@@ -28,8 +32,12 @@
   "author": "Artem Schander",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/node": "^20.0.0"
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.0.0",
+    "jest": "^30.0.5",
+    "jest-junit": "^16.0.0",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.0.0"
   },
   "engines": {
     "node": ">=12.0.0"

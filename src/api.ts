@@ -7,7 +7,10 @@ import { CurrencyDenomination, CurrencyDenominations, CurrencyCode } from './typ
  * @returns The currency denomination data or null if not found
  */
 export function getDenominations(currencyCode: CurrencyCode): CurrencyDenomination | null {
-  const code = currencyCode.toUpperCase();
+  if (!currencyCode || typeof currencyCode !== 'string') {
+    return null;
+  }
+  const code = currencyCode.trim().toUpperCase();
   return currencyDenominations[code] || null;
 }
 
@@ -45,7 +48,10 @@ export function getSupportedCurrencies(): CurrencyCode[] {
  * @returns True if the currency is supported, false otherwise
  */
 export function hasDenominations(currencyCode: CurrencyCode): boolean {
-  const code = currencyCode.toUpperCase();
+  if (!currencyCode || typeof currencyCode !== 'string') {
+    return false;
+  }
+  const code = currencyCode.trim().toUpperCase();
   return code in currencyDenominations;
 }
 

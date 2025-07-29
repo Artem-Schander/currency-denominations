@@ -230,6 +230,43 @@ The denomination data is based on official currency information and includes:
 - Empty arrays for special currencies without physical denominations
 - Accurate decimal values for fractional denominations
 
+## Testing
+
+The package includes a comprehensive test suite with 100% code coverage:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Run tests in watch mode (for development)
+npm run test:watch
+
+# Run tests for CI (with JUnit output)
+npm run test:ci
+
+# Run legacy test script
+npm run test:legacy
+```
+
+### Test Coverage
+
+- **API Functions**: Complete testing of all public API functions with edge cases
+- **Data Integrity**: Validation of all currency data for consistency and correctness
+- **TypeScript Compliance**: Ensures proper type definitions and exports
+- **Integration Tests**: End-to-end workflow testing and error handling
+- **Performance Tests**: Basic performance validation for large datasets
+
+The test suite validates:
+- 173+ currencies with proper denomination data
+- All major world currencies (USD, EUR, GBP, JPY, etc.)
+- Special currencies (XAU, XAG, XDR, etc.)
+- Regional currency unions (XOF, XAF, XPF, XCD)
+- Data format consistency and sorting
+- Proper error handling for invalid inputs
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests for:
@@ -252,3 +289,7 @@ MIT License - see LICENSE file for details.
 - Full TypeScript definitions
 - ES modules and CommonJS support
 - Complete API with utility functions
+- **NEW**: Comprehensive Jest testing framework with 100% code coverage
+- **NEW**: Data integrity validation and quality assurance tests
+- **NEW**: CI/CD workflow with GitHub Actions
+- **NEW**: Enhanced error handling for edge cases
